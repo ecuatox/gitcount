@@ -1,12 +1,12 @@
 import re
 
 def get_ignore():
-	ignore = []
+	ignore = ['total']
 
 	try:
 		f = open('ignore.txt', 'r')
 	except FileNotFoundError:
-		return []
+		return ignore
 
 	line = f.readline().strip()
 	while line != '':

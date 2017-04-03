@@ -12,7 +12,6 @@ branch: master
 ```
 4. Create a `ignore.txt` file with regex expressions describing what to ignore
 ```
-total
 \.gitignore
 .*fonts.*
 .*__init__.py
