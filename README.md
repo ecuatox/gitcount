@@ -8,6 +8,7 @@ Count every line in a github repository
 ```
 repo_name: REPOSITORY_NAME
 repo_url: https://github.com/USERNAME/REPOSITORY_NAME.git
+branch: master
 ```
 4. Create a `ignore.txt` file with regex expressions describing what to ignore
 ```
