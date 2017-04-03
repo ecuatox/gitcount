@@ -19,6 +19,6 @@ do
 done
 
 cd ../../
-sudo rm -r count
+rm -r -f count
 python3 run.py
-sudo rm git_report.txt
+rm git_report.txt
