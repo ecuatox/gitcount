@@ -63,8 +63,8 @@ def main():
 		f.write(commit['message'] + '\n')
 		f.write('Total %r' % commit['total'] + '\n')
 		lines = []
-		for file in commit['data']:
-			lines.append((file, str(commit['data'][file]).ljust(5, ' ')))
+		for fname in commit['data']:
+			lines.append((fname, str(commit['data'][fname]).ljust(5, ' ')))
 		lines = sorted(lines)
 		f.write('\n'.join(['%s%s' % (line[1], line[0]) for line in lines]) + '\n')
 		f.write('\n')
