@@ -27,17 +27,20 @@ total
 ```
 ...
 
-d65680d310c36c871ba29880e0a9d24ca74698d1
-Remove sudo
-Total 104
-    7 .gitignore
-   73 run.py
-   24 run.sh
- 
 ae8795f27d10679ffbb565a2bb3123fd8cdca5bd
 Fix FileNotFoundError when not using ignore.txt
 Total 108
     7 .gitignore
    77 run.py
    24 run.sh
+
+ef374c17481b4908d9db0fb19acfc184679c09d0
+Create README.md
+Total 150
+    7 .gitignore
+   42 README.md
+   77 run.py
+   24 run.sh
+
+...
 ```
