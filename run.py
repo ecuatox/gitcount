@@ -3,7 +3,11 @@ import re
 def get_ignore():
 	ignore = []
 
-	f = open('ignore.txt', 'r')
+	try:
+		f = open('ignore.txt', 'r')
+	except FileNotFoundError:
+		return []
+
 	line = f.readline().strip()
 	while line != '':
 		ignore.append(line)
