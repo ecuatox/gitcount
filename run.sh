@@ -6,6 +6,7 @@ mkdir count
 cd count
 git clone $repo_url
 cd $repo_name
+git checkout $branch
 
 if [ "$1" == "" ]
 then
