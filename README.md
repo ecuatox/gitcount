@@ -20,7 +20,7 @@ total
 .*\.png
 ```
 5. Make the script executable `chmod +x run.sh`
-6. Run the script `./run.sh` or `./run.sh <number>` if you only want a the last <number> commits
+6. Run the script `./run.sh` or `./run.sh <number>` if you only want the last `<number>` commits
 7. Display the report `cat report.txt`
 
 ## Example output
