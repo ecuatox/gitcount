@@ -1,0 +1,7 @@
+local_settings.*
+report.*
+ignore.*
+
+__pycache__/
+*.py[cod]
+*$py.class
