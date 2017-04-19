@@ -1,5 +1,5 @@
 ## GitCount
-Count every line in a github repository
+Count every line in a github repository  
 Get a full report as a txt file and excel sheet
 
 ## Usage
