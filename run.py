@@ -1,4 +1,6 @@
 import re
+import xlwt
+from datetime import datetime
 
 def local_setting(key):
 	try:
@@ -42,6 +44,8 @@ def get_data():
 	while commit_id != '':
 		message = f.readline().strip()
 		count = f.readline().strip()
+		date = f.readline().strip()
+		user = f.readline().strip()
 
 		commit = {}
 		lines = count.split()
@@ -73,6 +77,8 @@ def get_data():
 			'id': commit_id,
 			'message': message,
 			'data': commit,
+			'date': date,
+			'user': user,
 			'total': total,
 		})
 
@@ -82,9 +88,26 @@ def get_data():
 	return data
 
 def main():
+
+	wb = xlwt.Workbook()
+	ws = wb.add_sheet('Sheet 1')
+
+	ws.write(0, 0, 'Date')
+	ws.write(0, 1, 'Commit ID')
+	ws.write(0, 2, 'User')
+	ws.write(0, 3, 'Lines')
+	ws.write(0, 4, 'Messages')
+
 	f = open('report.txt', 'w')
 	data = get_data()[::-1]
-	for commit in data:
+	for a in enumerate(data):
+		i, commit = a
+		ws.write(i+1, 0, datetime.fromtimestamp(int(commit['date'])).strftime('%Y-%m-%d %H:%M:%S'))
+		ws.write(i+1, 1, commit['id'])
+		ws.write(i+1, 2, commit['user'])
+		ws.write(i+1, 3, commit['total'])
+		ws.write(i+1, 4, commit['message'])
+
 		f.write(commit['id'] + '\n')
 		f.write(commit['message'] + '\n')
 		f.write('Total %r' % commit['total'] + '\n')
@@ -95,5 +118,7 @@ def main():
 		f.write('\n'.join(['%s%s' % (line[1], line[0]) for line in lines]) + '\n')
 		f.write('\n')
 	f.close()
+
+	wb.save('report.xls')
 
 main()

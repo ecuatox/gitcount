@@ -1,6 +1,7 @@
 repo_name=$(awk -F': ' '/repo_name/ {print $2}' local_settings.txt)
 repo_url=$(awk -F': ' '/repo_url/ {print $2}' local_settings.txt)
 branch=$(awk -F': ' '/branch/ {print $2}' local_settings.txt)
+f=../../git_report.txt
 
 mkdir count
 cd count
@@ -20,10 +21,14 @@ do
 	git checkout $commit
 	message=$(git log --format=%B -n 1 $commit)
 	count=$(git ls-files | xargs wc -l)
+	date=$(git log --format=%at -n 1 $commit)
+	user=$(git log --format=%aN -n 1 $commit)
 
-	echo $commit >> ../../git_report.txt
-	echo $message >> ../../git_report.txt
-	echo $count >> ../../git_report.txt
+	echo $commit >> $f
+	echo $message >> $f
+	echo $count >> $f
+	echo $date >> $f
+	echo $user >> $f
 done
 
 cd ../../

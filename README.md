@@ -1,17 +1,21 @@
 ## GitCount
 Count every line in a github repository
+Get a full report as a txt file and excel sheet
 
 ## Usage
 1. Clone the github repository `git clone https://github.com/ecuatox/gitcount.git`
 2. Enter the repository `cd gitcount`
-3. Create a `local_settings.txt` file with the following information about your repository
+3. Create a virtualenv `virtualenv -p python3 env`
+4. Source the env `source env/bin/activate`
+5. Install requirements `pip install -r requirements.txt`
+6. Create a `local_settings.txt` file with the following information about your repository
 ```
 repo_name: REPOSITORY_NAME
 repo_url: https://github.com/USERNAME/REPOSITORY_NAME.git
 branch: master
 inverted: false
 ```
-4. Create a `ignore.txt` file with regex expressions describing what to ignore
+7. Create a `ignore.txt` file with regex expressions describing what to ignore
 ```
 \.gitignore
 .*fonts.*
@@ -19,11 +23,11 @@ inverted: false
 .*\.svg
 .*\.png
 ```
-5. Make the script executable `chmod +x run.sh`
-6. Run the script `./run.sh` or `./run.sh <number>` if you only want the last `<number>` commits
-7. Display the report `cat report.txt`
+8. Make the script executable `chmod +x run.sh`
+9. Run the script `./run.sh` or `./run.sh <number>` if you only want the last `<number>` commits
+10. Display the report `cat report.txt` or open the excel document
 
-## Example output
+## Example report.txt output
 ```
 ...
 
