@@ -3,7 +3,7 @@ Count every line in a github repository
 Get a full report as a txt file and excel sheet
 
 ## Usage
-1. Clone the github repository `git clone https://github.com/ecuatox/gitcount.git`
+1. Clone the github repository `git clone https://github.com/tenstad/gitcount.git`
 2. Enter the repository `cd gitcount`
 3. Create a virtualenv `virtualenv -p python3 env`
 4. Source the env `source env/bin/activate`
